@@ -92,11 +92,12 @@ Assuming we collect $L$ channel measurement vectors as training samples in a spe
 such that for all channel responses $\mathbf{h}_i, i=1,\ldots,L$, they can be approximated as $\mathbf{h}_i\approx \mathbf{C}\mathbf{x}_i$, $\mathbf{x}_i\in \mathbb{C}^{M\times 1}$. The dictionary learning algorithm should in general be able to address model fitting $\Vert \mathbf{h}_i-\mathbf{C}\mathbf{x}_i\Vert_2$
 (accuracy), and encourage small $\Vert \mathbf{x}_i\Vert_0$ (efficiency) for sparse representation. If one constrains the 
 model mismatch error, then the dictionary learning problem can be formulated as
+r latexImg {
 \begin{align}
 &\min\limits_{\mathbf{x}_1,\ldots,\mathbf{x}_L} \frac{1}{L}\sum_{i=1}^L\Vert\mathbf{x}_i\Vert_0\\
 &\mathrm{s.t.}\:\:\Vert\mathbf{h}_i-\mathbf{C}\mathbf{x}_i\Vert_2\leq \eta,\:\forall i
 \label{eq:DL_vector_form}
-\end{align}
+\end{align}}
 and $\Vert \mathbf{C}_{.j}\Vert_2\leq 1$, $\forall j=1,\ldots, M$ in order to prevent ambiguity between $\mathbf{C}$ and $\mathbf{x}$. The solved $\mathbf{C}$ in (\ref{eq:DL_vector_form}) leads to the sparsest representation in the sense of all channel measurements, given the model mismatch tolerance $\eta$.
 
 Two similar formulations could alternatively be used. If one knows beforehand or wants to
