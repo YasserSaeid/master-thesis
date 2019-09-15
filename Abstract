@@ -1,0 +1,17 @@
+In massive MIMO systems, base stations (BSs) may deploy a large number of antennas. When the system operates in a frequency-division-duplex (FDD) mode, the extensive number of antennas poses a significant challenge to the channel estimation in the downlink of the communication system. 
+To deal with this issue, 
+one option is to explore the possible underlying channel structure whereby the high-dimensional
+channel vector admits a low-dimensional (sparse)  representation in some basis or \textit{dictionary}. Under this model, estimation of the downlink channel vectors translates to solving a sparse inverse linear problem. %which in order to accurately estimate the downlink channel response $h^d$ in a signal cell operated by FDD massive MIMO technology during the alternated  training period $T^d$. 
+Hence, the compressed sensing framework can be leveraged to obtain accurate channel estimation with reduced training and feedback overhead, proportional to the sparsity level of the channel. 
+
+Motivated by the work in  \cite{CE_FDD:journals/corr/DingR16}, in this thesis, we adopt a dictionary learning based channel model (DLCM) according to which a \textit{learned, overcomplete dictionary} is used to represent
+the channel vectors. The motivation behind DLCM is that the dictionary, due to the learning process, is able to adapt to the cell characteristics
+as well as insure a sparse representation of the channel. Additionally, since no structural constraints are placed
+on the dictionary, the approach is applicable to an arbitrary array geometry and also does not need
+accurate array calibration.  
+
+To perform channel estimation in the DLCM model, it is necessary to extend the CS-based framework to be able to handle signals that have sparse representations in a learned redundant dictionary, rather than a predefined  orthogonal basis. Focusing on this problem, we investigate the performance of two classes of algorithms. The first class comprises of adaptations of "classical" CS reconstruction algorithms (LASSO  and Signal-Space COSSAMP), to account specifically for the learned overcomplete dictionary in the channel estimation step. The other class of algorithms leverages the \textit{deep learning} (DL) framework which has been recently successfully adopted in many applications such as speech recognition and image classification. In the context of high-dimensional channel estimation, we use the deep learning approach to mimic, using a
+neural network, iterative algorithms such as approximate message passing (AMP)
+and iterative shrinkage-thresholding algorithms (ISTA).  
+
+Besides the use of the CS and DL frameworks to perform  channel estimation, we investigate the possibility to provide  compressed channel representation by performing \textit{unsupervised clustering}. For this purpose we evaluate the performance of two algorithms. The first one is an adaptation of the classical K-means algorithm. The second one is a non-parametric method based on \textit{deep embedded clustering} in the spirit of \cite{DECP:journals/corr/XieGF15}. The compressed channel representation may be seen as an alternative to methods based on compressed channel feedback,  with the difference that the channel compression takes place directly in the domain of the low-dimensional channel representation. 
